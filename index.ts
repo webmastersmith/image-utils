@@ -23,30 +23,30 @@ import path from 'path'
   //Fixed Size
   //Creates different extensions in different sizes, 1x, 2x, 3x.
   // make folder and store image into it.
-  await fixedSize({
-    folderName: 'hero', //this will be folder name inside public folder.
-    picName: 'heroCard.png',
-    originalWidth: 1251,
-    originalHeight: 1912,
-    width: 300,
-    alt: 'territory card',
-    nums: [1, 2, 3], //this is the multiplier for image size.
-    exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
-  })
+  // await fixedSize({
+  //   folderName: 'hero', //this will be folder name inside public folder.
+  //   picName: 'heroCard.png',
+  //   originalWidth: 1251,
+  //   originalHeight: 1912,
+  //   width: 300,
+  //   alt: 'territory card',
+  //   nums: [1, 2, 3], //this is the multiplier for image size.
+  //   exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
+  // })
 
   //Responsive Images - 100vw
   //same as fixedSize, create images with a 'sizes' attribute of 100vw.
   //responsive Image sizes="100vw"
-  // responsiveImage100vw({
-  //   folderName: 'coffeeLetter',
-  //   alt: 'image of coffee with man writing letter',
-  //   picName: 'coffeeLetter.jpg',
-  //   originalWidth: 4608,
-  //   originalHeight: 3456,
-  //   widths: [245, 290, 400],
-  //   nums: [1, 2, 3], //this is the multiplier for image size.
-  //   exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
-  // })
+  responsiveImage100vw({
+    folderName: 'pen',
+    alt: 'pen with letter',
+    picName: 'pen.jpg',
+    originalWidth: 4608,
+    originalHeight: 3456,
+    sizes: [375, 768, 1440],
+    nums: [1, 2, 3], //this is the multiplier for image size.
+    exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
+  })
 
   //Responsive Images - multiple widths
   //create fixedSizes for different media queries.
