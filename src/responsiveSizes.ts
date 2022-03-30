@@ -29,18 +29,20 @@ const responsiveImageSizes = async ({
   //const height = Math.round((originalHeight / originalWidth) * newWidth)
   //const width = Math.round((originalWidth / originalHeight) * newHeight)
 
+  //this is needed to change basepath variable for github pages.
   const basePath = 'basePath'
   // push each source
   const source = []
   //loop widths
   for (const { mediaQuery, width } of sizes) {
+    // you know width you want image to be, find height to keep aspect ratio.
     const height = Math.round((originalHeight / originalWidth) * width)
 
-    // loop extensions
+    // loop extensions. Create different extension for each width.
     for (const ext of exts) {
       const srcSetSizes = []
 
-      //loop size multiplier to get sourceSet sizes
+      //loop size 1x, 2x, 3x..., multiplier to get sourceSet sizes
       for (const num of nums) {
         const fileName = `${folderName}/${picName.replace(/.\w{3,4}$/, '')}-${
           width * num
@@ -71,7 +73,7 @@ const responsiveImageSizes = async ({
   //final print. make sure to add width and height to class, to prevent layout shift.
   console.log(
     `let basePath = '/next-territory-app'
-    if (process.env.NODE_ENV === 'development') {
+    if (process.env.NEXT_PUBLIC_BUILD_TYPE === 'local') {
       basePath = ''
     }
   

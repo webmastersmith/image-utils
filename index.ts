@@ -9,7 +9,7 @@ import {
 } from './src/placeholder'
 import fs from 'fs'
 import path from 'path'
-import { getPlaiceholder } from 'plaiceholder'
+// import { getPlaiceholder } from 'plaiceholder'
 
 //run baby run!
 ;(async () => {
@@ -17,22 +17,26 @@ import { getPlaiceholder } from 'plaiceholder'
   // console.log(metadata)
 
   //create placeholder
-  const fileName = './p.jpeg'
-  await generatePlaceholderImage(fileName, 100, 50)
+  // const fileName = './p.jpeg'
+  // await generatePlaceholderImage(fileName, 100, 50)
 
-  //Creates different extensions in different sizes.
+  //Fixed Size
+  //Creates different extensions in different sizes, 1x, 2x, 3x.
   // make folder and store image into it.
-  // await fixedSize({
-  //   folderName: 'hero', //this will be folder name inside public folder.
-  //   picName: 'heroCard.png',
-  //   width: 300,
-  //   height: 459,
-  //   alt: 'territory card',
-  //   nums: [1, 2, 3], //this is the multiplier for image size.
-  //   exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
-  // })
+  await fixedSize({
+    folderName: 'hero', //this will be folder name inside public folder.
+    picName: 'heroCard.png',
+    originalWidth: 1251,
+    originalHeight: 1912,
+    width: 300,
+    alt: 'territory card',
+    nums: [1, 2, 3], //this is the multiplier for image size.
+    exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
+  })
 
-  // //responsive Image sizes="100vw"
+  //Responsive Images - 100vw
+  //same as fixedSize, create images with a 'sizes' attribute of 100vw.
+  //responsive Image sizes="100vw"
   // responsiveImage100vw({
   //   folderName: 'coffeeLetter',
   //   alt: 'image of coffee with man writing letter',
@@ -44,19 +48,21 @@ import { getPlaiceholder } from 'plaiceholder'
   //   exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
   // })
 
+  //Responsive Images - multiple widths
+  //create fixedSizes for different media queries.
   //responsive Image sizes="(max-width: 768px) 245px, 400px" //can be px or vw. -not percentage.
-  responsiveImageSizes({
-    folderName: 'coffeeLetter',
-    alt: 'image of man writing letter',
-    picName: 'coffeeLetter.jpg',
-    originalWidth: 2754,
-    originalHeight: 4000,
-    sizes: [
-      { mediaQuery: 'max-width: 424px', width: 290 },
-      { mediaQuery: 'max-width: 768px', width: 400 },
-      { mediaQuery: 'min-width: 769px', width: 245 },
-    ],
-    nums: [1, 2, 3], //this is the multiplier for image size.
-    exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
-  })
+  // responsiveImageSizes({
+  //   folderName: 'girl',
+  //   alt: 'girl writing letter in quiet spot',
+  //   picName: 'girl.jpg',
+  //   originalWidth: 2754,
+  //   originalHeight: 4000,
+  //   sizes: [
+  //     { mediaQuery: 'max-width: 424px', width: 290 }, //0 - 424px
+  //     { mediaQuery: 'max-width: 768px', width: 400 }, //425xp - 768px
+  //     { mediaQuery: 'min-width: 769px', width: 245 }, //769px - ~
+  //   ],
+  //   nums: [1, 2, 3], //this is the multiplier for image size.
+  //   exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
+  // })
 })()
