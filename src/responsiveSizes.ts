@@ -35,6 +35,8 @@ const responsiveImageSizes = async ({
   const source = []
   //loop widths
   for (const { mediaQuery, width } of sizes) {
+    // make sure you find the ratio of all pics: w/h = ratio.
+    // may have to crop picture to get correct ratio, if using multiple pics
     // you know width you want image to be, find height to keep aspect ratio.
     const height = Math.round((originalHeight / originalWidth) * width)
 
