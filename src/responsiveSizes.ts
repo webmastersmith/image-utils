@@ -3,6 +3,7 @@ import sharp, { FormatEnum } from 'sharp'
 type Sizes = {
   mediaQuery: string
   width: number
+  height: number
 }
 interface ResponsiveType {
   folderName: string
@@ -34,11 +35,11 @@ const responsiveImageSizes = async ({
   // push each source
   const source = []
   //loop widths
-  for (const { mediaQuery, width } of sizes) {
+  for (const { mediaQuery, width, height } of sizes) {
     // make sure you find the ratio of all pics: w/h = ratio.
     // may have to crop picture to get correct ratio, if using multiple pics
     // you know width you want image to be, find height to keep aspect ratio.
-    const height = Math.round((originalHeight / originalWidth) * width)
+    // const height = Math.round((originalHeight / originalWidth) * width)
 
     // loop extensions. Create different extension for each width.
     for (const ext of exts) {

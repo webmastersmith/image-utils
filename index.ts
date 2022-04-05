@@ -60,9 +60,9 @@ import path from 'path'
     originalWidth: 2680,
     originalHeight: 4000,
     sizes: [
-      { mediaQuery: 'max-width: 424px', width: 290 }, //0 - 424px
-      { mediaQuery: 'max-width: 768px', width: 400 }, //425xp - 768px
-      { mediaQuery: 'min-width: 769px', width: 245 }, //769px - ~
+      { mediaQuery: 'max-width: 424px', width: 290, height: 435 }, //0 - 424px
+      { mediaQuery: 'max-width: 768px', width: 400, height: 600 }, //425xp - 768px
+      { mediaQuery: 'min-width: 769px', width: 245, height: 367 }, //769px - ~
     ],
     nums: [1, 2, 3], //this is the multiplier for image size.
     exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
