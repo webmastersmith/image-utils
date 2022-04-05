@@ -57,7 +57,7 @@ import path from 'path'
     folderName: 'girl',
     alt: 'girl writing letter in quiet spot',
     picName: 'girl.jpg',
-    originalWidth: 2754,
+    originalWidth: 2680,
     originalHeight: 4000,
     sizes: [
       { mediaQuery: 'max-width: 424px', width: 290 }, //0 - 424px
