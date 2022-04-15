@@ -19,6 +19,11 @@ import path from 'path'
   //create placeholder
   // const fileName = './p.jpeg'
   // await generatePlaceholderImage(fileName, 100, 50)
+  const fileName = 'addressHelper.png'
+  //sharp
+  sharp(`./img/${fileName}`)
+    .resize({ width: 450, height: 600, fit: 'contain', position: 'top' })
+    .toFile(`./img/fixed/${fileName}`)
 
   //Fixed Size
   //Creates different extensions in different sizes, 1x, 2x, 3x.
@@ -53,18 +58,18 @@ import path from 'path'
   //responsive Image sizes="(max-width: 768px) 245px, 400px" //can be px or vw. -not percentage.
   // make sure you find the ratio of all pics: w/h = ratio.
   // may have to crop picture to get correct ratio, if using multiple pics
-  responsiveImageSizes({
-    folderName: 'girl',
-    alt: 'girl writing letter in quiet spot',
-    picName: 'girl.jpg',
-    originalWidth: 2680,
-    originalHeight: 4000,
-    sizes: [
-      { mediaQuery: 'max-width: 424px', width: 290, height: 435 }, //0 - 424px
-      { mediaQuery: 'max-width: 768px', width: 400, height: 600 }, //425xp - 768px
-      { mediaQuery: 'min-width: 769px', width: 245, height: 367 }, //769px - ~
-    ],
-    nums: [1, 2, 3], //this is the multiplier for image size.
-    exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
-  })
+  // responsiveImageSizes({
+  //   folderName: 'girl',
+  //   alt: 'girl writing letter in quiet spot',
+  //   picName: 'girl.jpg',
+  //   originalWidth: 2680,
+  //   originalHeight: 4000,
+  //   sizes: [
+  //     { mediaQuery: 'max-width: 424px', width: 290, height: 435 }, //0 - 424px
+  //     { mediaQuery: 'max-width: 768px', width: 400, height: 600 }, //425xp - 768px
+  //     { mediaQuery: 'min-width: 769px', width: 245, height: 367 }, //769px - ~
+  //   ],
+  //   nums: [1, 2, 3], //this is the multiplier for image size.
+  //   exts: ['avif', 'webp', 'jpg'], //avif then webp should come first
+  // })
 })()
